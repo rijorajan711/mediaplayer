@@ -2,13 +2,29 @@
 import './App.css';
 import Home from './Pages/Home';
 import LandingPage from './Pages/LandingPage';
+import Watch_history from './Pages/Watch_history';
+import { Routes,Route } from 'react-router-dom';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 function App() {
   return (
     <div className="App">
-     <h1>haaai</h1>
-     <Home />
-     <LandingPage ></LandingPage>
+    
+     <Header />
+     <Routes>
+
+    <Route path='/' element={ <LandingPage />} ></Route>
+    <Route path='/home' element={ <Home />} ></Route>
+    <Route path='/watch_history' element={ <Watch_history />} ></Route>
+
+     </Routes>
+     <Footer />
+
+    
+    
+     
+     
     </div>
   );
 }
