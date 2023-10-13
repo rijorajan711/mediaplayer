@@ -102,7 +102,7 @@ function Add({setUploadVideoServerResponse}) {
           <Button onClick={handleUpload}  variant="primary">Upload</Button>
         </Modal.Footer>
       </Modal>
-      <ToastContainer position='top-center' theme='colored' autoClose={1000}/>
+      <ToastContainer position='top-center' theme='colored' autoClo0se={100}/>
     </> 
 
    

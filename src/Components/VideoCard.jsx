@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { deleteAVideo } from '../services/allAPI';
 import { addToHistory } from '../services/allAPI';
 
-function VideoCard({setDeleteVideoResponseState,displayData}) {
+function VideoCard({setDeleteVideoResponseState,displayData,inSideCategory}) {
 
 
   const [show, setShow] = useState(false);
@@ -29,17 +29,28 @@ function VideoCard({setDeleteVideoResponseState,displayData}) {
         
     setDeleteVideoResponseState(deleteVideoResponse.data.statusText)
   }
+
+
+  const dragStarted=(e,id)=>{
+    console.log("card iiiiiiiddddddddddddd",id)
+    e.dataTransfer.setData("videoId",id)
+  }
+
+
   return (
     <>
     
     <div className='mt-5'>
        
-      <Card >
+      <Card draggable onDragStart={(e)=>dragStarted(e,displayData?.id)}>
       <Card.Img  height={250} onClick={handleShow} variant="top" src={displayData?.url} />
       <Card.Body>
         <Card.Title className='d-flex justify-content-between align-items-center'>
           <h6>{displayData?.caption}</h6>
-         <button className='btn' onClick={()=>deleteItem(displayData?.id)}><i className="fa-solid fa-trash text-danger"></i></button> 
+        {
+          
+          inSideCategory?"":<button className='btn' onClick={()=>deleteItem(displayData?.id)}><i className="fa-solid fa-trash text-danger"></i></button> 
+         } 
           </Card.Title>
       
  
