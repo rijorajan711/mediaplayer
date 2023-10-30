@@ -22,7 +22,11 @@ function Home() {
     <div className='container-fluid mt-5  mb-5 w-100 d-flex gap-5 justify-content-between align-items-center'>
 
         <div className='allvideo col-lg-9'>
+            <div className='d-flex'>
+
             <h3>All videos</h3>
+            
+            </div>
             <View uploadVideoServerResponse={uploadVideoServerResponse} />
         </div>
         <div className='category col-lg-2'>

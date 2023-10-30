@@ -89,8 +89,11 @@ function Category() {
   return (
 
   <>
-    <div>
-     <button onClick={handleShow} className='btn btn-primary w-100'>Add category</button>    
+    <div >
+     <button onClick={handleShow} className='btn btn-primary w-100'>Add category</button>
+         <p className="fw-bolder fs-5 text-sucess">
+            Drag & Drop Video <i className="fa-solid fa-arrow-down"></i>
+          </p>
     </div>
     { 
          allCategories.length>0?allCategories?.map((item,index)=>(
