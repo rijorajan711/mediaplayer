@@ -9,6 +9,7 @@ export const commonAPI=async (httpMethod,url,reqBody)=>{
         data:reqBody,
         headers:{
             "Content-Type":"application/json"
+       
         }
 
     }

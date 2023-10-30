@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { addCategory,deleteCategory,getAllCategory,getAVideo, updateCategory } from '../services/allAPI';
 import VideoCard from './VideoCard';
+import { Link } from 'react-router-dom';
 
 
 function Category() {
@@ -22,7 +23,7 @@ function Category() {
     const getCategories=async()=>{
        
       const {data}=await getAllCategory()
-      
+      console.log(data)
       setAllCategories(data)
 
  } 
@@ -99,9 +100,10 @@ function Category() {
 
         <h6>{item.categoryName}</h6>
         <button onClick={()=>handleCategoryDelete(item?.id)} className='btn'> <i className='fa-solid fa-trash text-danger'></i> </button>
+         <Link to={"/morecategory"} > <button  className='btn'>Show More </button></Link>
           </div>
         
-          <Row>
+          {/* <Row>
   
             {
                 item?.allVideo?.length>0&&item?.allVideo.map(card=>(
@@ -112,7 +114,7 @@ function Category() {
     
             }
   
-          </Row>
+          </Row> */}
         </div>
   
         )):<p className='fw-bolder fs-5 text-danger'>Category is empty....</p>

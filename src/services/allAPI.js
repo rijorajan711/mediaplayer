@@ -4,7 +4,7 @@ import { commonAPI } from "./commonAPI"
 
 export const uploadVideo = async(reqBody)=>{
     //make post http request to http://localhost:4000/videos to add video in json server and return response to "Add" coponent
-
+    console.log("uploaded videooooooooooooo",reqBody)
     return await commonAPI("POST",`${serverURL}/videos`,reqBody)
 }
 
@@ -36,7 +36,7 @@ export const deleteAVideo=async(id)=>{
 export const addToHistory=async(videoDetails)=>{
    //make post http requet to http://localhost:4000/history to add video history to json server and
   //  return response to videoCard component 
-
+   console.log("addRo Hosutory post",videoDetails)
    return await commonAPI("POST",`${serverURL}/history`,videoDetails)
 
 }
